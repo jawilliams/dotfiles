@@ -1,0 +1,15 @@
+
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=Simply Basic Hybrid
+Comment=Simply Basic Hybrid theme
+Encoding=UTF-8
+
+Name[en_US]=Simply Basic Hybrid
+
+[X-GNOME-Metatheme]
+GtkTheme=Simply Basic Hybrid
+MetacityTheme=Simply Basic Hybrid
+IconTheme=ubuntu-mono-light
+CursorTheme=DMZ-White
+ButtonLayout=close,minimize,maximize:
