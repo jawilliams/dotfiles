@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/home/josh/gitosis/gitosis-admin-kratos'
+let g:netrw_dirhist_2='/home/SHARE_ONE/jwilliams/projects/rails/rails3/emery/app/views/suffixes'
+let g:netrw_dirhist_3='/home/SHARE_ONE/jwilliams/projects/rails/rails3/nsweb/lib/nsweb'
