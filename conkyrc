@@ -28,8 +28,8 @@ alignment top_right
 background yes
 border_width 1
 cpu_avg_samples 2
-default_outline_color #ffffff
-default_shade_color #e0e0e0
+default_outline_color 000000
+default_shade_color 000000
 double_buffer yes
 draw_borders no
 draw_graph_borders yes
@@ -50,7 +50,7 @@ own_window_class Conky
 own_window_type override
 own_window_transparent yes
 stippled_borders 0
-update_interval 3.0
+update_interval 3
 uppercase no
 use_spacer left
 use_xft yes
@@ -70,6 +70,19 @@ color2 ababaa #dark gray ( labels/calendar )
 color3 4f4165 #dark purple (hr's)
 color4 e4e3e3 #light gray/white ( plain text )
 #${voffset 10}${font smoothansi:size=14}${execp DJS=`date +%_d`; cal | cut -c23-44 --complement | sed 's/^\([ \t]\+\)\([a-zA-Z]\+[ ][0-9]\{4\}\)/\1${color1}\2/' | sed 's/^\(.*\)$/${goto 100}${color2}\1/' | sed s/"$DJS"'\b'/'${color1}'"$DJS"'${color2}'/}
+
+#${voffset 10}${font anorexia:size=11}${color1}WEATHER${font} ${color3}${hr 2}
+# ${color}${font ConkyWeather:style=bold:size=50}${execi 600 conkyForecast -l USMS0156 -d WF -i}${font}
+# ${offset 40}${voffset 0}${font anorexia:size=11}${execi 600 conkyForecast -l USMS0156 -d HT -i -x}${font}
+#${voffset -55}${goto 125}${execi 100 conkyForecast -l USMS0156 -d DW -s 1 -w}${goto 205}${execi 100 conkyForecast -l USMS0156 -d DW -s 2 -w}${goto 285}${execi 600 conkyForecast -l USMS0156 -d DW -s 3 -w}
+# ${goto 120}${font ConkyWeather:size=24}${execi 600 conkyForecast -l USMS0156 -d WF -s 1 -e 3 -S 6}${font}
+# ${goto 115}${execi 600 conkyForecast -l USMS0156 -d HT -s 1 -u -c 3 -i -x}/${execi 600 conkyForecast -l USMS0156 -d LT -s 1 -u -c 3 -i -x}${goto 195}${execi 600 conkyForecast -l USMS0156 -d HT -s 2 -u -c 3 -i -x}/${execi 600 conkyForecast -l USMS0156 -d LT -s 2 -u -c 3 -i -x}${goto 275}${execi 100 conkyForecast -l USMS0156 -d HT -s 3 -u -c 3 -i -x}/${execi 600 conkyForecast -l USMS0156 -d LT -s 3 -u -i -x}
+# ${voffset 20}Sunrise: ${execi 600 conkyForecast --location USMS0156 --datatype=SR -i}
+# Sunset: ${execi 600 conkyForecast --location USMS0156 --datatype=SS -i}
+#
+# ${voffset -30}${alignr}Wind: ${execi 600 conkyForecast --location USMS0156 --datatype=WS -i}
+# ${alignr}Humidity: ${execi 600 conkyForecast --location USMS0156 --datatype=HM -i}
+# ${alignr}Precipitation: ${execi 600 conkyForecast --location USMS0156 --datatype=PC -i}
 
 TEXT
 ${font fixed:size=20}${color0}${alignc}$nodename${color}${font}
@@ -108,20 +121,8 @@ ${voffset 10}${font anorexia:size=11}${color1}PROCESSES/MEMORY${font} ${color3}$
   ${color}${top_mem name 1}${goto 120}${top_mem pid 1}${goto 170}${top_mem cpu 1}${goto 220}${top_mem mem 1}
   ${top_mem name 2}${goto 120}${top_mem pid 2}${goto 170}${top_mem cpu 2}${goto 220}${top_mem mem 2}
   ${top_mem name 3}${goto 120}${top pid 3}${goto 170}${top_mem cpu 3}${goto 220}${top_mem mem 3}
-${voffset 10}${font anorexia:size=11}${color1}WEATHER${font} ${color3}${hr 2}
- ${color}${font Weather:style=bold:size=50}${execi 1800 conkyForecast -l USMS0156 -d WF -i}${font}
- ${offset 40}${voffset -10}${font anorexia:size=11}${execi 1800 conkyForecast -l USMS0156 -d HT -i -x}${font}
-${voffset -55}${goto 125}${execi 1800 conkyForecast -l USMS0156 -d DW -s 1 -w}${goto 205}${execi 1800 conkyForecast -l USMS0156 -d DW -s 2 -w}${goto 285}${execi 1800 conkyForecast -l USMS0156 -d DW -s 3 -w}
- ${goto 120}${font ConkyWeather:size=24}${execi 1800 conkyForecast -l USMS0156 -d WF -s 1 -e 3 -S 6}${font}
- ${goto 115}${execi 1800 conkyForecast -l USMS0156 -d HT -s 1 -u -c 3 -i -x}/${execi 1800 conkyForecast -l USMS0156 -d LT -s 1 -u -c 3 -i -x}${goto 195}${execi 1800 conkyForecast -l USMS0156 -d HT -s 2 -u -c 3 -i -x}/${execi 1800 conkyForecast -l USMS0156 -d LT -s 2 -u -c 3 -i -x}${goto 275}${execi 1800 conkyForecast -l USMS0156 -d HT -s 3 -u -c 3 -i -x}/${execi 1800 conkyForecast -l USMS0156 -d LT -s 3 -u -i -x}
- ${voffset 20}Sunrise: ${execi 1800 conkyForecast --location USMS0156 --datatype=SR -i}
- Sunset: ${execi 1800 conkyForecast --location USMS0156 --datatype=SS -i}
-
- ${voffset -30}${alignr}Wind: ${execi 1800 conkyForecast --location USMS0156 --datatype=WS -i}
- ${alignr}Humidity: ${execi 1800 conkyForecast --location USMS0156 --datatype=HM -i}
- ${alignr}Precipitation: ${execi 1800 conkyForecast --location USMS0156 --datatype=PC -i}
 ${voffset 10}${font anorexia:size=11}${color1}PORTAGE${font} ${color3}${hr 2}
- ${voffset 5}${color2}Last Sync${goto 120}${color}${execi 300 /home/SHARE_ONE/jwilliams/bin/lastsync.pl}
+ ${voffset 5}${color2}Last Sync${goto 120}${color}${execi 600 /home/SHARE_ONE/jwilliams/bin/lastsync.pl}
  ${color2}Current Progress${goto 120}${color}${execibar 30 /home/SHARE_ONE/jwilliams/bin/emerge-progress.sh}
  ${color2}Current Package${goto 120}${color}${execi 30 /home/SHARE_ONE/jwilliams/bin/emerge-current.sh}
  ${color2}Current Status${goto 120}${color}${execi 30 /home/SHARE_ONE/jwilliams/bin/emerge-status.sh}
