@@ -4,9 +4,9 @@ call pathogen#infect()
 syntax on
 colorscheme jellybeans
 set mouse=a
-"set shiftwidth=4
-"set tabstop=4
-"set cinoptions=+0
+set shiftwidth=4
+set tabstop=4
+set cinoptions=+0
 set title
 set incsearch
 set hlsearch
@@ -28,3 +28,8 @@ nmap <C-up> <C-W><Up>
 nmap <C-down> <C-W><Down>
 
 filetype plugin indent on
+
+augroup myfiletypes
+	autocmd!
+	autocmd FileType ruby,eruby,yaml set ai sw=2 sts=2 et
+augroup END
