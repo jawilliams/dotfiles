@@ -62,8 +62,10 @@ esac
 PS1="\[\033[37m\]\w\n\[\033[31m\]\u@\h: \[\033[1;33m\]\$(/usr/bin/tty | /bin/sed -e 's:/dev/::')\[\033[0m\] -> \[\033[0m\]"
 
 # for SSH stuff
-keychain ~/.ssh/id_dsa
-. ~/.keychain/$HOSTNAME-sh
+if [[ -f ~/.keychain/$HOSTNAME-sh ]]; then
+	keychain ~/.ssh/id_dsa
+	. ~/.keychain/$HOSTNAME-sh
+fi
 
 # Where are we?
 #if [ "$LOC_SWITCHED" != "1" ]; then
