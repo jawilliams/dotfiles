@@ -91,8 +91,10 @@ ${font anorexia:size=11}${color1}SYSTEM ${color3}${hr 2}${font}
  ${voffset 5}${color2}Uptime:${color} $uptime ${color2}- Load:${color} $loadavg
  ${color2}CPU Frequency:${color} $freq_g Ghz ${color2} Maximum:${color} $freq_g
  ${color2}CPU Usage:${color} $cpu% ${cpubar}
- ${voffset 5}${color2}CPU0${alignr}CPU1
- ${color2}${cpugraph cpu0 32,150 000000 e4e3e3} ${cpugraph cpu1 32,150 000000 e4e3e3}
+ ${voffset 5}${color2}CPU0${goto 86}CPU1${goto 163}CPU2${goto 240}CPU3
+ ${color2}${cpugraph cpu0 32,72 000000 e4e3e3} ${cpugraph cpu1 32,72 000000 e4e3e3} ${cpugraph cpu2 32,72 000000 e4e3e3} ${cpugraph cpu3 32,72 000000 e4e3e3}
+ ${voffset 5}${color2}CPU4${goto 86}CPU5${goto 163}CPU6${goto 240}CPU7
+ ${cpugraph cpu4 32,72 000000 e4e3e3} ${cpugraph cpu5 32,72 000000 e4e3e3} ${cpugraph cpu6 32,72 000000 e4e3e3} ${cpugraph cpu7 32,72 000000 e4e3e3}
  ${color2}RAM Usage:${color} $mem/$memmax - $memperc% ${membar}
  ${color2}Swap Usage:${color} $swap/$swapmax - $swapperc% ${swapbar}
  ${color2}Processes:${color} $processes  ${color2}Running:${color} $running_processes
